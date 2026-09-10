@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leen Support</title>
+<meta name="description" content="Help with Leen: connecting a scale, Bluetooth permission, exporting data and deleting an account.">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #F7F7F9;
+  --surface: #FFFFFF;
+  --border: #E4E4EA;
+  --text: #111116;
+  --muted: #6B6B79;
+  --faint: #8E8E9C;
+  --accent: #1FB688;
+  --accent-soft: #D9F6EC;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B0B0F;
+    --surface: #17171E;
+    --border: #1F1F27;
+    --text: #F7F7F9;
+    --muted: #B8B8C3;
+    --faint: #8E8E9C;
+    --accent: #2DD4A0;
+    --accent-soft: rgba(45, 212, 160, 0.14);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 56px 22px 88px;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+h2 {
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  margin: 44px 0 12px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+h3 {
+  font-size: 17px;
+  font-weight: 650;
+  margin: 24px 0 6px;
+}
+p, ul, ol { margin: 0 0 16px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 9px; }
+li::marker { color: var(--accent); }
+strong { font-weight: 650; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.lede {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+.contact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 0 0 16px;
+}
+.contact p { margin: 0 0 8px; }
+.contact p:last-child { margin-bottom: 0; }
+.email {
+  font-size: 19px;
+  font-weight: 650;
+}
+footer {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: var(--faint);
+  font-size: 15px;
+}
+footer p { margin: 0 0 6px; }
+@media (max-width: 480px) {
+  main { padding: 40px 18px 64px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 19px; margin-top: 36px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Leen</p>
+  <h1>Support</h1>
+  <p class="lede">Leen reads weight and bioimpedance from a Bluetooth smart scale, and body lengths from a Bluetooth tape measure, then shows you the trend instead of the daily noise. Readings are kept on your phone, and backing them up to an account is optional.</p>
+
+  <div class="contact">
+    <p class="email"><a href="mailto:whanifi@medbill.com.au">whanifi@medbill.com.au</a></p>
+    <p>Every email is read by the person who wrote the app. Include your phone model, your iOS version, and the name of your scale or tape.</p>
+  </div>
+
+  <h2>Devices it works with</h2>
+  <h3>Scales</h3>
+  <p>Scales that speak the QN protocol, which covers Renpho and the many scales sold under other names on the same hardware. Both kinds are handled: the ones you connect to, and the ones that simply broadcast the reading. Nothing is paired and nothing is set up. Step on the scale with the Weigh tab open and the app finds it, remembers it, and uses it from then on.</p>
+  <h3>Tape measures</h3>
+  <p>Bluetooth tapes that report as ES-TAPE, QN-Tape, SPC007, GR-94103, PNC001 or ER30xUWB. The name is usually printed on the tape or shown in your phone's Bluetooth list.</p>
+  <h3>No hardware at all</h3>
+  <p>Readings can be typed in by hand, and history can be imported from Renpho, Withings, Fitbit, Garmin, Zepp, Eufy, openScale, an Apple Health export, or any CSV with a date column and a weight column.</p>
+
+  <h2>The scale is heard but the reading never saves</h2>
+  <p>The card says Reading, the number moves, and then nothing is stored. Some scales never send the flag that says the number has settled, so the app waits for something that is not coming.</p>
+  <ol>
+    <li><strong>Wait for the Save button.</strong> Once your weight has held steady for a couple of seconds, a Save button appears on the card. Tap it. That reading is stored with the weight but without impedance, so body composition is skipped for it.</li>
+    <li><strong>Stand still with bare feet.</strong> Impedance needs skin on both electrodes, and a scale that cannot get a stable impedance reading will often keep trying rather than finish.</li>
+    <li><strong>Make sure the scale is not already talking to its own app.</strong> Close it, or turn Bluetooth off on any other phone nearby, then step on again.</li>
+    <li><strong>Send the diagnostics.</strong> Settings, Scale and devices, Diagnostics writes a plain text trail of exactly what the radio did: every advertisement heard, the connection and its timing, and every frame decoded. Email it to the address above and it will say where the weigh in stopped.</li>
+  </ol>
+
+  <h2>Bluetooth permission</h2>
+  <p>The Weigh tab says "Allow Bluetooth for Leen in Settings", or it never gets past Listening.</p>
+  <ul>
+    <li><strong>iOS.</strong> Open the Settings app, find Leen in the list, and turn Bluetooth on. If the permission was declined once, this is the only place it can be granted again.</li>
+    <li><strong>Bluetooth turned off entirely.</strong> The app says "Turn Bluetooth on first". Turn it on in Control Centre or in Settings, and the app picks up on its own.</li>
+    <li><strong>Android.</strong> Allow Nearby devices when asked. On older versions of Android the system asks for Location instead, because that is how it gates Bluetooth scanning. The app does not use your location and never asks for it.</li>
+    <li><strong>Still nothing.</strong> Check that Auto connect is on in Settings, Scale and devices. Force quit the app and open it again, which restarts the radio.</li>
+  </ul>
+
+  <h2>Export and back up your data</h2>
+  <p><strong>Export.</strong> Settings, Data, Export. Choose the people, what to include and CSV or JSON, and the file is handed to the normal share sheet. It contains the raw weight and impedance for every reading, so body composition can be recomputed from it anywhere. Exports are also the way to move to another app.</p>
+  <p><strong>Back up.</strong> Settings, Account, then sign in with Apple or with a link sent to your email. From then on readings sync in the background to a database in Sydney, Australia, so a lost phone does not mean lost history. Install the app on a new phone, sign in, and everything comes back. Signing in is optional and the whole app works without it.</p>
+
+  <h2>Delete your account</h2>
+  <p>Settings, Account, Delete account. It erases the account and every reading in it, then erases everything on this phone as well. It is immediate and it cannot be undone, so export first if you want a copy.</p>
+  <p>To clear this phone but keep the backup, use Settings, Data, Delete everything. To clear the phone with no account involved, just delete the app.</p>
+
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:whanifi@medbill.com.au">whanifi@medbill.com.au</a>. Attach the diagnostics file if the problem is a reading that will not save.</p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+    <p>Leen, made in Brisbane.</p>
+  </footer>
+</main>
+</body>
+</html>
